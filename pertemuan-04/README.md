@@ -1,28 +1,30 @@
-# Pertemuan 3 - Formulir HTML dan CSS Dasar
+# Pertemuan 4 CSS3 Layout dan Responsive Web Design
 
-## Baseline
-- Menggunakan baseline dari P2 sebagai dasar pengembangan P3.
-- Menyalin berkas dari `pertemuan-02/` ke `pertemuan-03/`.
+## Pengembangan
+Perubahan yang dilakukan:
+- Memisahkan CSS internal dari `index.html` ke berkas eksternal `style.css`.
+- Menerapkan CSS Box Model (`box-sizing: border-box`, `padding`, `border`, `margin`) untuk penataan elemen halaman.
+- Menerapkan CSS Flexbox pada elemen navigasi (`nav ul`) untuk menyusun tautan secara terstruktur.
+- Menerapkan CSS Grid pada elemen `main` untuk membuat tata letak dua kolom pada bagian Home dan Tentang Saya, serta bagian Kontak dengan lebar penuh (`grid-column: 1 / -1`).
+- Menerapkan Desain Web Responsif dengan pendekatan Mobile-First menggunakan media query `@media (min-width: 768px)` untuk menyesuaikan tata letak pada layar perangkat bergerak dan desktop.
 
-## Implementasi Formulir
-- Elemen form yang digunakan: `<form>`, `<label>`, `<input>`, `<select>`, `<textarea>`, dan `<button>`.
-- Tipe input yang digunakan: `text`, `email`, `number`, `date`, `radio`, dan `checkbox`.
-- Atribut validasi: `required`, `minlength`, `maxlength`, `min`, `max`.
+Commit dan push GitHub:
+- `Terapkan desain web responsif P4`
 
-## Pengujian GET dan POST
-- Hasil pengujian GET: Data parameter dari formulir terkirim dan dapat dilihat pada URL (query string).
-- Karakter URL Encoding: Spasi diubah menjadi `+`, serta karakter `@` diubah menjadi `%40`.
-- Hasil pengujian POST: Data dikirim pada body request sehingga tidak terlihat di URL. Pada GitHub Pages mengembalikan response status 405 Not Allowed karena merupakan hosting statis.
+## Pengujian
+Perangkat bergerak:
+- Ukuran viewport: `< 768px` (misal: 375px / Mobile)
+- Hasil pengujian: Navigasi tersusun secara vertikal, seluruh elemen (`#home`, `#about`, `#contact`) tersusun dalam 1 kolom vertikal yang rapi, tidak ada galat tata letak, dan konten mudah dibaca.
 
-## CSS Dasar
-- Selector elemen: `h2`, `h3`, `p`, `ol`, `button`, `label`
-- Selector class: `.form-group`, `.input-form`
-- Selector ID: `#about`, `#contact`
-- Properti CSS yang digunakan: `background-color`, `color`, `font-family`, `padding`, `margin`, `border`, `border-bottom`.
+Desktop:
+- Ukuran viewport: `≥ 768px` (misal: 1024px / Laptop/PC)
+- Hasil pengujian: Navigasi berubah menjadi susunan horizontal, bagian `#home` dan `#about` tampil berdampingan dalam 2 kolom sejajar, bagian `#contact` membentang di lebar penuh di bawahnya, dan tata letak responsif berjalan sempurna.
 
-## Pengujian dan Perbaikan
-- Galat yang ditemukan: Penulisan atribut `for` pada label sempat tidak sama dengan `id` pada input.
-- Perbaikan yang dilakukan: Menyediakan dan menyamakan atribut `id` serta `for` agar kursor fokus ke input ketika label diklik.
+Galat dan perbaikan:
+- Tidak ditemukan galat tata letak setelah penerapan Flexbox, Grid, dan Media Query.
 
-## GitHub Pages
-URL: https://2622500044keyla.github.io/2622500044-PWD-SI1J-262710/pertemuan-03/
+Validasi CSS:
+- Hasil validasi melalui W3C CSS Validation Service menunjukkan `0 Error` (Valid / tidak terdapat galat pada berkas `style.css`).
+
+## Repositori
+URL GitHub: https://github.com/2622500044keyla/2622500044-PWD-SI1J-26271O
