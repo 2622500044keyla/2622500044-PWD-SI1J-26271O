@@ -56,20 +56,20 @@
             </article>
         </section>
 
-        <!-- Section Kontak (Form Netral Sesuai Modul P6) -->
+        <!-- Section Kontak (Form Lengkap, Netral, & Ada Validasi Required) -->
         <section id="contact">
             <h2>Kontak</h2>
             <p>Kunjungi <a target="_blank" href="https://github.com/satpamal">profil GitHub saya</a>.</p>
             
-            <form id="contactForm" action="index.php" method="get" novalidate>
+            <form id="contactForm" action="index.php" method="get">
                 <div>
                     <label for="nama">Nama Lengkap:</label><br>
-                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap">
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
                 </div>
                 <br>
                 <div>
                     <label for="prodi">Program Studi:</label><br>
-                    <select id="prodi" name="prodi">
+                    <select id="prodi" name="prodi" required>
                         <option value="" disabled selected>--- Pilih Program Studi ---</option>
                         <option value="SI">Sistem Informasi (SI)</option>
                         <option value="TI">Teknik Informatika (TI)</option>
@@ -78,28 +78,28 @@
                 <br>
                 <div>
                     <label for="semester">Semester Saat Ini:</label><br>
-                    <input type="number" id="semester" name="semester" placeholder="Masukkan semester (1-8)" min="1" max="8">
+                    <input type="number" id="semester" name="semester" placeholder="Masukkan semester (1-8)" min="1" max="8" required>
                 </div>
                 <br>
                 <div>
                     <label for="tanggal">Tanggal Kunjungan:</label><br>
-                    <input type="date" id="tanggal" name="tanggal">
+                    <input type="date" id="tanggal" name="tanggal" required>
                 </div>
                 <br>
-                <!-- Pilihan Topik Pertanyaan -->
+                <!-- Pilihan Topik Pertanyaan (Radio Button) -->
                 <div>
                     <label>Topik Pertanyaan:</label><br>
-                    <input type="radio" id="topik_html" name="topik" value="HTML">
+                    <input type="radio" id="topik_html" name="topik" value="HTML" required>
                     <label for="topik_html">HTML</label>
                     
-                    <input type="radio" id="topik_css" name="topik" value="CSS">
+                    <input type="radio" id="topik_css" name="topik" value="CSS" required>
                     <label for="topik_css">CSS</label>
                 </div>
                 <br>
-                <!-- Kotak Saran -->
+                <!-- Kotak Tulis Saran -->
                 <div>
                     <label for="saran">Tulis Saran:</label><br>
-                    <textarea id="saran" name="saran" rows="4" cols="40" placeholder="Tuliskan saran kamu di sini..."></textarea>
+                    <textarea id="saran" name="saran" rows="4" cols="40" placeholder="Tuliskan saran kamu di sini..." required></textarea>
                 </div>
                 <br>
                 <button type="submit">Kirim</button>
