@@ -1,1 +1,167 @@
-halo ini tugas pertemuan 1
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Pribadi - Keyla Melvia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. HEADER (Point 2) -->
+    <header>
+        <img src="assets/logo.png" alt="Logo Web" class="logo">
+        <h1>Blog Pribadi Keyla Melvia</h1>
+    </header>
+
+    <div class="main-wrapper">
+        <!-- 2. NAVIGASI SEBELAH KIRI (Point 3) -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#" class="menu-link active" onclick="tampilHalaman(event, 'beranda')">Beranda</a></li>
+                <li><a href="#" class="menu-link" onclick="tampilHalaman(event, 'profile')">Profile</a></li>
+                <li><a href="#" class="menu-link" onclick="tampilHalaman(event, 'pendaftaran')">Pendaftaran</a></li>
+            </ul>
+        </nav>
+
+        <!-- 3. KONTEN UTAMA (Point 1 & 3) -->
+        <main class="content-area">
+            
+            <!-- HALAMAN BERANDA -->
+            <section id="beranda" class="section-content active">
+                <h2>Selamat Datang di Beranda</h2>
+                
+                <h3>Keseharian & Dunia Baking Saya 🧁🍰</h3>
+                
+                <p class="intro-text">
+                    Halo semuanya! Nama saya <strong>Keyla Melvia</strong>. Setiap hari, kehidupan saya diisi dengan kombinasi yang menyenangkan antara kreasi di dapur dan tugas akademis sebagai mahasiswi Sistem Informasi kelas SI1J.
+                </p>
+
+                <p class="intro-text">
+                    <strong>Pagi Hari (Dunia Memasak & Baking):</strong><br>
+                    Hari saya dimulai dari pagi hari untuk menyalurkan hobi memasak dan membuat kue. Pada pukul <strong>08.15 hingga 11.00 WIB</strong>, dapur menjadi tempat saya berkreasi. Di jam-jam inilah saya menyiapkan bahan, mencoba resep kue baru, hingga mengdekorasi *pastry* dan kue manis. Aktivitas baking di pagi hari selalu sukses membakar semangat saya untuk menjalani hari.
+                </p>
+
+                <p class="intro-text">
+                    <strong>Siang Hari (Istirahat & Persiapan):</strong><br>
+                    Setelah selesai berkreasi di dapur, siang hari saya gunakan untuk menikmati hasil buatan kue, beristirahat, merapikan peralatan, serta bersiap-siap berangkat ke kampus ISB Atma Luhur.
+                </p>
+
+                <p class="intro-text">
+                    <strong>Sore hingga Malam Hari (Dunia Kampus & IT):</strong><br>
+                    Jadwal perkuliahan saya dimulai pada sore hingga malam hari, yaitu pukul <strong>16.30 hingga 21.00 WIB</strong>. Di kelas SI1J, fokus saya beralih ke dunia teknologi, memahami logika pemrograman, koding, dan menggarap project Pemrograman Web Dasar.
+                </p>
+
+                <!-- DOKUMENTASI FOTO HOBI BAKING (MULTIPLE PHOTOS) -->
+                <h3 style="margin-top: 25px;">Dokumentasi Hasil Baking 📸</h3>
+                
+                <div class="media-box" style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px;">
+                    
+                    <!-- FOTO BAKING 1 -->
+                    <div style="flex: 1; min-width: 200px;">
+                        <img src="assets/hobi1.jpg" alt="Membuat Kue 1" class="img-hobi" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 2px solid #ff69b4;">
+                        <p style="text-align: center; font-size: 13px; margin-top: 5px; font-weight: bold; color: #d81b60;">Kue & Pastry Home-made</p>
+                    </div>
+                    
+                    <!-- FOTO BAKING 2 -->
+                    <div style="flex: 1; min-width: 200px;">
+                        <img src="assets/hobi2.jpg" alt="Membuat Kue 2" class="img-hobi" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 2px solid #ff69b4;">
+                        <p style="text-align: center; font-size: 13px; margin-top: 5px; font-weight: bold; color: #d81b60;">Dekorasi Cake & Cupcake</p>
+                    </div>
+
+                    <!-- FOTO BAKING 3 -->
+                    <div style="flex: 1; min-width: 200px;">
+                        <img src="assets/hobi3.jpg" alt="Membuat Kue 3" class="img-hobi" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 2px solid #ff69b4;">
+                        <p style="text-align: center; font-size: 13px; margin-top: 5px; font-weight: bold; color: #d81b60;">Eksperimen Resep Baru</p>
+                    </div>
+
+                     <!-- FOTO BAKING 4 -->
+                    <div style="flex: 1; min-width: 200px;">
+                        <img src="assets/hobi4.jpg" alt="Membuat Kue 4" class="img-hobi" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 2px solid #ff69b4;">
+                        <p style="text-align: center; font-size: 13px; margin-top: 5px; font-weight: bold; color: #d81b60;">Dekorasi Cake & Cupcake</p>
+                    </div>
+
+                </div>
+
+                <h3 style="margin-top: 25px;">Jadwal Rutinitas Sehari-hari</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Waktu</th>
+                            <th>Kegiatan Utama</th>
+                            <th>Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>08.15 - 11.00 WIB</td>
+                            <td>Memasak & Baking Kue</td>
+                            <td>Eksperimen Resep & Dekorasi Cake</td>
+                        </tr>
+                        <tr>
+                            <td>11.00 - 16.00 WIB</td>
+                            <td>Istirahat & Persiapan Kuliah</td>
+                            <td>Makan Siang & Review Mandiri</td>
+                        </tr>
+                        <tr>
+                            <td>16.30 - 21.00 WIB</td>
+                            <td>Perkuliahan & Belajar Web (ISB Atma Luhur)</td>
+                            <td>Fokus Akademis Kelas SI1J & Coding</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- HALAMAN PROFILE -->
+            <section id="profile" class="section-content">
+                <h2>Profil Diri</h2>
+                <div class="profile-card">
+                    <img src="assets/foto-profil.jpg" alt="Foto Keyla Melvia" class="img-profile">
+                    <div class="profile-detail">
+                        <p><strong>Nama Lengkap:</strong> Keyla Melvia</p>
+                        <p><strong>NIM:</strong> 2622500044</p>
+                        <p><strong>Kelompok / Kelas:</strong> SI1J</p>
+                        <p><strong>Program Studi:</strong> Sistem Informasi</p>
+                        <p><strong>Hobi:</strong> Memasak & Making Cakes (Baking)</p>
+                        <p><strong>GitHub:</strong> <a href="https://github.com/2622500044keyla/2622500044-PWD-SI1J-26271O" target="_blank" class="github-link">Lihat Repository GitHub</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- HALAMAN PENDAFTARAN (Point 3 - 20 Point WAJIB) -->
+            <section id="pendaftaran" class="section-content">
+                <h2>Formulir Pendaftaran Workshop Baking Keyla</h2>
+                <p style="margin-bottom: 15px;">Ingin belajar membuat kue bersama saya? Silakan isi formulir pendaftaran di bawah ini:</p>
+
+                <form id="formPendaftaran" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap:</label>
+                        <input type="text" id="nama" placeholder="Masukkan nama Anda..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Aktif:</label>
+                        <input type="email" id="email" placeholder="Masukkan email..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kategori">Pilihan Class Baking:</label>
+                        <select id="kategori">
+                            <option value="Cake & Cupcake Decoration">Cake & Cupcake Decoration</option>
+                            <option value="Pastry & Bakery Basics">Pastry & Bakery Basics</option>
+                            <option value="Traditional Indonesian Cookies">Traditional Indonesian Cookies</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">Kirim Pendaftaran</button>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- 4. FOOTER (Point 4) -->
+    <footer>
+        2622500044_Keyla Melvia_SI1J_UTS Pemrograman Web Dasar
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
