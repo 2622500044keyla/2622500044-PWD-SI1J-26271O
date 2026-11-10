@@ -14,15 +14,3 @@ function tampilHalaman(evt, namaHalaman) {
     document.getElementById(namaHalaman).classList.add('active');
     evt.currentTarget.classList.add('active');
 }
-
-function submitForm(evt) {
-    evt.preventDefault(); 
-
-    
-    let namaInput = document.getElementById('nama').value;
-    let kategoriInput = document.getElementById('kategori').value;
-
-    alert('Terima kasih ' + namaInput + '! Pendaftaran Anda untuk kelas "' + kategoriInput + '" berhasil terkirim.');
-
-    document.getElementById('formPendaftaran').reset();
-}

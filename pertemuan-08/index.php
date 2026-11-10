@@ -1,16 +1,27 @@
+<?php
+$pesan_sukses = "";
+$data_pendaftar = [];
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nama = htmlspecialchars($_POST['nama']);
+    $email = htmlspecialchars($_POST['email']);
+    $kategori = htmlspecialchars($_POST['kategori']);
+
+    $pesan_sukses = "Pendaftaran atas nama <strong>$nama</strong> untuk kelas <strong>$kategori</strong> berhasil dikirim!";
+}
+?>
 <!DOCTYPE html>
-<html lang="id"
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-content="width"=device-width, intial-scale="1.0">
-    <title>Blog Pribadi - Keyla Melvia </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Pribadi - Keyla Melvia</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <img src="assets/logo.png" alt="Logo Web" class="logo">
+        <img src="assets/Logo_ISB_atma_luhur_final.png" alt="Logo Web" class="logo">
         <h1>Blog Pribadi Keyla Melvia</h1>
     </header>
 
@@ -28,7 +39,7 @@ content="width"=device-width, intial-scale="1.0">
             <section id="beranda" class="section-content active">
                 <h2>Selamat Datang di Beranda</h2>
                 
-                <h3>Keseharian & Dunia Baking Saya</h3>
+                <h3>Keseharian & Dunia Baking Saya </h3>
                 
                 <p class="intro-text">
                     Halo semuanya! Nama saya <strong>Keyla Melvia</strong>. Setiap hari, kehidupan saya diisi dengan kombinasi yang menyenangkan antara kreasi di dapur dan tugas akademis sebagai mahasiswi Sistem Informasi kelas SI1J.
@@ -36,7 +47,7 @@ content="width"=device-width, intial-scale="1.0">
 
                 <p class="intro-text">
                     <strong>Pagi Hari (Dunia Memasak & Baking):</strong><br>
-                    Hari saya dimulai dari pagi hari untuk menyalurkan hobi memasak dan membuat kue. Pada pukul <strong>08.15 hingga 11.00 WIB</strong>, dapur menjadi tempat saya berkreasi. Di jam-jam inilah saya menyiapkan bahan, mencoba resep kue baru, hingga mengdekorasi *pastry* dan kue manis. Aktivitas baking di pagi hari selalu sukses membakar semangat saya untuk menjalani hari.
+                    Hari saya dimulai dari pagi hari untuk menyalurkan hobi memasak dan membuat kue. Pada pukul <strong>08.15 hingga 11.00 WIB</strong>, dapur menjadi tempat saya berkreasi. Di jam-jam inilah saya menyiapkan bahan, mencoba resep kue baru, hingga mengdekorasi *pastry* dan kue manis.
                 </p>
 
                 <p class="intro-text">
@@ -49,10 +60,9 @@ content="width"=device-width, intial-scale="1.0">
                     Jadwal perkuliahan saya dimulai pada sore hingga malam hari, yaitu pukul <strong>16.30 hingga 21.00 WIB</strong>. Di kelas SI1J, fokus saya beralih ke dunia teknologi, memahami logika pemrograman, koding, dan menggarap project Pemrograman Web Dasar.
                 </p>
 
-                <h3 style="margin-top: 25px;">Dokumentasi Hasil Baking</h3>
+                <h3 style="margin-top: 25px;">Dokumentasi Hasil Baking </h3>
                 
                 <div class="media-box" style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px;">
-                    
                     <div style="flex: 1; min-width: 200px;">
                         <img src="assets/hobi1.jpg" alt="Membuat Kue 1" class="img-hobi" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 2px solid #ff69b4;">
                         <p style="text-align: center; font-size: 13px; margin-top: 5px; font-weight: bold; color: #d81b60;">Kue & Pastry Home-made</p>
@@ -69,10 +79,9 @@ content="width"=device-width, intial-scale="1.0">
                     </div>
 
                     <div style="flex: 1; min-width: 200px;">
-                        <img src="assets/hobi4.jpg" alt="Membuat Kue 4" class="img-hobi" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 2px solid #ff69b4;">
+                        <img src="assets/hobi4.jpg" alt="Membuat Kue 3" class="img-hobi" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 2px solid #ff69b4;">
                         <p style="text-align: center; font-size: 13px; margin-top: 5px; font-weight: bold; color: #d81b60;">Eksperimen Resep Baru</p>
                     </div>
-
 
                 </div>
 
@@ -120,29 +129,63 @@ content="width"=device-width, intial-scale="1.0">
                 </div>
             </section>
 
-            <section id="pendaftaran" class="section-content">
+            <section id="pendaftaran" class="section-content <?php echo isset($_POST['nama']) ? 'active' : ''; ?>">
                 <h2>Formulir Pendaftaran Workshop Baking Keyla</h2>
                 <p style="margin-bottom: 15px;">Ingin belajar membuat kue bersama saya? Silakan isi formulir pendaftaran di bawah ini:</p>
 
-                <form id="formPendaftaran" onsubmit="submitForm(event)">
+                <?php if (!empty($pesan_sukses)): ?>
+                    <div style="background-color: #d4edda; color: #155724; padding: 12px; border-radius: 6px; margin-bottom: 15px; border: 1px solid #c3e6cb;">
+                        <?php echo $pesan_sukses; ?>
+                    </div>
+                <?php endif; ?>
+
+                <form action="index.php" method="POST">
                     <div class="form-group">
                         <label for="nama">Nama Lengkap:</label>
-                        <input type="text" id="nama" placeholder="Masukkan nama Anda..." required>
+                        <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda..." required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Aktif:</label>
-                        <input type="email" id="email" placeholder="Masukkan email..." required>
+                        <input type="email" id="email" name="email" placeholder="Masukkan email..." required>
                     </div>
                     <div class="form-group">
                         <label for="kategori">Pilihan Class Baking:</label>
-                        <select id="kategori">
+                        <select id="kategori" name="kategori">
                             <option value="Cake & Cupcake Decoration">Cake & Cupcake Decoration</option>
                             <option value="Pastry & Bakery Basics">Pastry & Bakery Basics</option>
                             <option value="Traditional Indonesian Cookies">Traditional Indonesian Cookies</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn-submit">Kirim Pendaftaran</button>
+                    <button type="submit" class="btn-submit">Kirim Pendaftaran (via PHP)</button>
                 </form>
+
+                <div style="margin-top: 35px;">
+                    <h3>Data Pendaftaran Terakhir (Diproses PHP) </h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nama Lengkap</th>
+                                <th>Email</th>
+                                <th>Pilihan Class</th>
+                                <th>Waktu Submit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php if (isset($_POST['nama'])): ?>
+                                <tr>
+                                    <td><strong><?php echo htmlspecialchars($_POST['nama']); ?></strong></td>
+                                    <td><?php echo htmlspecialchars($_POST['email']); ?></td>
+                                    <td><?php echo htmlspecialchars($_POST['kategori']); ?></td>
+                                    <td><?php echo date('H:i:s WIB'); ?></td>
+                                </tr>
+                            <?php else: ?>
+                                <tr>
+                                    <td colspan="4" style="text-align: center; color: #888;">Belum ada data pendaftar yang dikirim.</td>
+                                </tr>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
         </main>
